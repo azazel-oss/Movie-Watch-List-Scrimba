@@ -8,16 +8,26 @@
       src="https://kit.fontawesome.com/f0bbacaee3.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Watchlist</title>
   </head>
   <body>
-    <header>
-      <h1>Watchlist</h1>
-      <a href="index.html">Search for movies</a>
-    </header>
-    <main>
-      <p>Your watchlist is looking a little empty...</p>
-      <p><a href="index.html"><i class="fa-solid fa-circle-plus"></i> Let's add some movies</a></i></p>
-    </main>
+    <div class="container">
+      <header>
+        <nav>
+          <h1>Watchlist</h1>
+          <a href="index.html">Search for movies</a>
+        </nav>
+      </header>
+      <main>
+        <div class="empty">
+          <div>Your watchlist is looking a little empty...</div>
+          <a href="index.html" class="watchlist-add"
+            ><i class="fa-solid fa-circle-plus"></i> Let's add some movies
+          </a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

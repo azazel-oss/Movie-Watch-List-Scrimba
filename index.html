@@ -8,19 +8,34 @@
       src="https://kit.fontawesome.com/f0bbacaee3.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Movie Watchlist</title>
   </head>
   <body>
-    <header>
-      <h1>Find your film</h1>
-      <a href="watchlist.html">My Watchlist</a>
-      <form action="/index.html">
-        <input type="text" />
-      </form>
-    </header>
-    <main>
-      <i class="fa-solid fa-film"></i>
-      <p>Start exploring</p>
-    </main>
+    <div class="container">
+      <header>
+        <nav>
+          <h1>Find your film</h1>
+          <a href="watchlist.html">My Watchlist</a>
+        </nav>
+        <form action="/index.html" method="get">
+          <div class="search">
+            <input
+              type="text"
+              placeholder="Search for a movie"
+              name="movie"
+              id="movie"
+            />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </header>
+      <main>
+        <div id="empty" class="empty">
+          <i class="fa-solid fa-film"></i>
+          <div>Start exploring</div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
