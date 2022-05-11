@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
+body {
+  background-color: #2e2e2f;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+header {
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80");
+  background-position: center center;
+  object-fit: cover;
+  padding: 5em;
+  height: 4em;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+main {
+  background-color: #121212;
+  min-height: 66vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background-color: #2e2e2f;
+  border: none;
+  color: #ffffff;
+  flex-basis: 59%;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding: 0.7em 2.5em;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 1em;
+}
+
+input::placeholder {
+  color: #a5a5a5;
+}
+
+button {
+  background-color: #4b4b4b;
+  border: none;
+  color: #ffffff;
+  flex-grow: 1;
+  padding: 0.7em 2.5em;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin-left: -0.35em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.search {
+  display: flex;
+  margin-top: 4em;
+}
+
+.empty {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2e2e2f;
+}
+
+.empty i {
+  font-size: 4.5rem;
+}
+
+.watchlist-add {
+  font-size: 1rem;
+}
+
+.watchlist-add i {
+  font-size: 1rem;
+}
