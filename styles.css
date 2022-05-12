@@ -126,14 +126,57 @@ button:focus {
   margin-top: 2em;
 }
 
-.watchlist-add {
-  font-size: 1rem;
-}
-
-.watchlist-add i {
-  font-size: 1rem;
+.watchlist-toggle:hover,
+.watchlist-toggle:focus {
+  text-decoration: underline;
 }
 
 .hidden {
   display: none;
+}
+
+.movies {
+  padding: 4em;
+}
+
+.movie {
+  display: flex;
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.poster {
+  flex-basis: 30%;
+  flex-shrink: 0;
+}
+
+.poster img {
+  width: 100%;
+}
+
+.movie-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 0 1em 1em;
+}
+
+.movie-header {
+  display: flex;
+  gap: 1em;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.info {
+  display: flex;
+  font-size: 0.75rem;
+  gap: 2em;
+}
+
+.movie-plot {
+  color: #a5a5a5;
 }
