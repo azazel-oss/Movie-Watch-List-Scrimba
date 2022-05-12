@@ -24,7 +24,6 @@ async function getMoviesBySearch(event) {
     for (let movieId of moviesArray) {
       moviesHTML += await getMovieHtml(movieId);
     }
-    console.log(moviesHTML);
     moviesContainerEl.innerHTML = moviesHTML;
 
     const movies = document.querySelectorAll(".movie");
@@ -32,8 +31,6 @@ async function getMoviesBySearch(event) {
       movie.addEventListener("click", (event) => {
         event.preventDefault();
         if (event.target.tagName === "A") {
-          console.log(event.target.id);
-          console.log(event.target.textContent);
           if (event.target.textContent === "Add to watchlist") {
             event.target.innerHTML = `<i class="fa-solid fa-circle-minus"></i>Remove`;
             if (!localStorage.getItem("moviesToWatch")) {
@@ -45,7 +42,10 @@ async function getMoviesBySearch(event) {
               let watchlistMovies = JSON.parse(
                 localStorage.getItem("moviesToWatch")
               );
-              watchlistMovies.push(event.target.id);
+
+              if (!watchlistMovies.includes(event.target.id)) {
+                watchlistMovies.push(event.target.id);
+              }
               localStorage.setItem(
                 "moviesToWatch",
                 JSON.stringify(watchlistMovies)
@@ -71,7 +71,6 @@ async function getMoviesBySearch(event) {
     emptyEl.classList.add("hidden");
     moviesContainerEl.classList.remove("hidden");
   } catch (error) {
-    console.log("Oops, something went terribly wrong!!!");
     emptyEl.classList.add("hidden");
     noResultEl.classList.remove("hidden");
   }
@@ -89,7 +88,14 @@ async function getMovieHtml(movieID) {
   html += `<div class="rating">⭐ ${data.imdbRating}</div></div>`;
   html += `<div class="info"><div>${data.Runtime}</div>`;
   html += `<div>${data.Genre}</div>`;
-  html += `<a id=${data.imdbID} href="/" class="watchlist-toggle"><i class="fa-solid fa-circle-plus"></i>Add to watchlist</a></div>`;
+  if (
+    JSON.parse(localStorage.getItem("moviesToWatch")) &&
+    JSON.parse(localStorage.getItem("moviesToWatch").includes(data.imdbID))
+  ) {
+    html += `<a id=${data.imdbID} href="/" class="watchlist-toggle"><i class="fa-solid fa-circle-minus"></i>Remove</a></div>`;
+  } else {
+    html += `<a id=${data.imdbID} href="/" class="watchlist-toggle"><i class="fa-solid fa-circle-plus"></i>Add to watchlist</a></div>`;
+  }
   html += `<div class="movie-plot">${data.Plot}</div>`;
   html += "</div></div>";
   return html;
