@@ -10,7 +10,7 @@ async function getMoviesBySearch(event) {
   const movieName = inputEl.value;
   try {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=866de549&s=${movieName}`
+      `https://www.omdbapi.com/?apikey=866de549&s=${movieName}`
     );
     const data = await response.json();
     console.log(data);
